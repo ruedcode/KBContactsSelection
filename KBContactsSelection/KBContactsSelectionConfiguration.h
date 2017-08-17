@@ -42,6 +42,10 @@ typedef NS_ENUM(NSInteger, KBContactsSelectionMode) {
 @property (strong) NSString * selectButtonTitle;
 @property (strong) KBContactSelectionHandler customSelectButtonHandler;
 
+/* Cell */
+@property (nonatomic, assign) CGFloat checkboxcAtiveOffset;
+@property (nonatomic, strong) UIImage *checkboxActiveImage;
+
 + (KBContactsSelectionConfiguration*)defaultConfiguration;
 
 @end

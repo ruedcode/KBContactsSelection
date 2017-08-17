@@ -11,5 +11,7 @@
 @interface KBRadioButton : UIButton
 
 @property (nonatomic, strong) UIColor *innerCircleFillColor;
+@property (nonatomic, assign) CGFloat dx;
+@property (nonatomic, assign) CGFloat dy;
 
 @end

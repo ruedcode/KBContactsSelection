@@ -333,6 +333,11 @@ static NSString *cellIdentifier = @"KBContactCell";
         cell.labelPhone.text = phoneText;
         cell.labelPhoneType.text = typeText;
         
+        cell.buttonSelection.dx = _configuration.checkboxcAtiveOffset;
+        cell.buttonSelection.dy = _configuration.checkboxcAtiveOffset;
+        if ( _configuration.checkboxActiveImage != nil ) {
+            [cell.buttonSelection setImage:_configuration.checkboxActiveImage forState:UIControlStateNormal];
+        }
         cell.buttonSelection.innerCircleFillColor = _configuration.tintColor;
         cell.buttonSelection.selected = [_selectedContactsRecordIds containsObject:contact.recordID];
         

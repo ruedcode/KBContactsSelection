@@ -40,6 +40,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    self.searchBar.translucent = false;
+    UITextField *textFieldInsideSearchBar = [self.searchBar valueForKey:@"searchField"];
+    
+    textFieldInsideSearchBar.borderStyle=UITextBorderStyleNone;
+    textFieldInsideSearchBar.layer.cornerRadius = 4.0f;
+    textFieldInsideSearchBar.layer.masksToBounds=YES;
+    textFieldInsideSearchBar.layer.borderColor = [[UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1.0] CGColor];
+    textFieldInsideSearchBar.layer.borderWidth = 0.5f;
 
     [self prepareContactsDataSource];
     [self prepareNavigationBar];
