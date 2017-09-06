@@ -38,7 +38,10 @@
 
 @property (strong, nonatomic) UIView * additionalInfoView;
 @property (readonly) NSArray * selectedContacts;
+- (void) clearSelected;
 
 + (KBContactsSelectionViewController*)contactsSelectionViewControllerWithConfiguration:(void (^)(KBContactsSelectionConfiguration* configuration))configurationBlock;
+
+
 
 @end

@@ -132,6 +132,11 @@
     }
 }
 
+- (void) clearSelected {
+    [_kBContactsTableViewDataSource removeAll];
+    _selectedContacts = @[];
+}
+
 - (void)customizeColors
 {
     _navigationBarSearchContacts.tintColor = _configuration.tintColor;
