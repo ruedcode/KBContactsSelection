@@ -27,7 +27,8 @@
 
 - (NSString*)firstLetterOfFullName
 {
-    NSString *fullName = [self fullName];
+    NSString *fullName = [[self fullName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
     if (fullName.length > 0) {
         return [[fullName substringToIndex:1] uppercaseString];
     }
