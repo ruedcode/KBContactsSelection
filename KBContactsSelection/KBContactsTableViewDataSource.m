@@ -185,11 +185,27 @@ static NSString *cellIdentifier = @"KBContactCell";
     }];
     _sectionIndexTitles = [[contactsInitialsSet allObjects] sortedArrayUsingComparator:^NSComparisonResult(NSString *s1, NSString *s2) {
 		if (_configuration.bottomUnnamedContacts) {
-			if ([s1 isEqualToString:@""]) {
+			//non leters to bottom
+			NSCharacterSet *validChars = [NSCharacterSet alphanumericCharacterSet];
+			
+			
+			if ([s1 isEqualToString:@""] ) {
 				return NSOrderedDescending;
 			}
-			if ([s2 isEqualToString:@""]) {
+			else if ( s1.length > 0 ) {
+				unichar c1 = [s1 characterAtIndex:0];
+				if (![validChars characterIsMember:c1]) {
+					return NSOrderedDescending;
+				}
+			}
+			if ([s2 isEqualToString:@""] ) {
 				return NSOrderedAscending;
+			}
+			else if ( s2.length > 0 ) {
+				unichar c2 = [s2 characterAtIndex:0];
+				if (![validChars characterIsMember:c2]) {
+					return NSOrderedAscending;
+				}
 			}
 		}
 		
