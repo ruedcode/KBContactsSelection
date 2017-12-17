@@ -30,10 +30,15 @@
     NSString *fullName = [[self fullName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
     if (fullName.length > 0) {
-        return [[fullName substringToIndex:1] uppercaseString];
+		NSString * letter = [fullName substringToIndex:1];
+		letter = [letter stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+		if( letter.length > 0) {
+			return [letter uppercaseString];
+		}
+
     }
     
-    return @"";
+	return @"#";
 }
 
 @end

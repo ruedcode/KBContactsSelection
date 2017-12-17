@@ -44,7 +44,13 @@
     self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.searchBar.translucent = false;
     UITextField *textFieldInsideSearchBar = [self.searchBar valueForKey:@"searchField"];
-    
+	
+	_tableView.tableFooterView = [UIView new];
+	
+	textFieldInsideSearchBar.leftView.contentMode = UIViewContentModeLeft;
+	CGRect frame = textFieldInsideSearchBar.leftView.frame;
+	frame.size = CGSizeMake(20, frame.size.height);
+	textFieldInsideSearchBar.leftView.frame = frame;
     textFieldInsideSearchBar.borderStyle=UITextBorderStyleNone;
     textFieldInsideSearchBar.layer.cornerRadius = 4.0f;
     textFieldInsideSearchBar.layer.masksToBounds=YES;
