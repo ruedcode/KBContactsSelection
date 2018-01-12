@@ -14,4 +14,6 @@
 
 - (NSString*)firstLetterOfFullName;
 
+- (NSString *)initials;
+
 @end

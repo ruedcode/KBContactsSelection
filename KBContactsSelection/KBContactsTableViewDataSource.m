@@ -77,7 +77,7 @@ static NSString *cellIdentifier = @"KBContactCell";
     
     [self.delegate dataSourceWillLoadContacts:self];
     APAddressBook *ab = [[APAddressBook alloc] init];
-    ab.fieldsMask = APContactFieldName | APContactFieldPhonesWithLabels | APContactFieldEmailsWithLabels | APContactFieldLinkedRecordIDs;
+    ab.fieldsMask = APContactFieldName | APContactFieldPhonesWithLabels | APContactFieldEmailsWithLabels | APContactFieldLinkedRecordIDs | APContactFieldThumbnail;
     ab.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name.firstName" ascending:YES]];
     
     ab.filterBlock = ^BOOL(APContact *contact){
@@ -264,9 +264,17 @@ static NSString *cellIdentifier = @"KBContactCell";
     }
 }
 
+- (void)remove:(APContact *) contact {
+    [_selectedContactsRecordIds removeObject:contact.recordID];
+    [self.tableView reloadData];
+    if ([_delegate respondsToSelector:@selector(dataSource:didRemoveContact:)]) {
+        [_delegate dataSource:self didRemoveContact:contact];
+    }
+}
+
 - (void)removeAll {
-    
     [_selectedContactsRecordIds removeAllObjects];
+    [self.tableView reloadData];
 }
 
 - (NSArray*)selectedContacts
@@ -355,6 +363,9 @@ static NSString *cellIdentifier = @"KBContactCell";
                 }
             }
         }
+        cell.avatarImageView.image = contact.thumbnail;
+//        cell.InitialsLabel.hidden = contact.thumbnail == nil;
+        cell.InitialsLabel.text = contact.initials;
         cell.labelPhone.text = phoneText;
         cell.labelPhoneType.text = typeText;
         

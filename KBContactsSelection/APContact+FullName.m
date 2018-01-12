@@ -25,6 +25,19 @@
     return result;
 }
 
+
+- (NSString *)initials {
+    NSString *result = @"";
+    if (self.name.firstName && self.name.firstName.length > 0) {
+        result = [self.name.firstName substringToIndex:1];
+    }
+    
+    if (self.name.lastName && self.name.lastName.length > 0) {
+        result = [NSString stringWithFormat:@"%@%@", result, [self.name.lastName substringToIndex:1]];
+    }
+    return result;
+}
+
 - (NSString*)firstLetterOfFullName
 {
     NSString *fullName = [[self fullName] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

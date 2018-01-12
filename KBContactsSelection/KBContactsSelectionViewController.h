@@ -17,6 +17,8 @@
 @optional
 - (void) contactsSelectionWillLoadContacts:(KBContactsSelectionViewController *)csvc;
 - (void) contactsSelectionDidLoadContacts:(KBContactsSelectionViewController *)csvc;
+- (void) contactsSelectionDidStartSearch:(KBContactsSelectionViewController *)csvc;
+- (void) contactsSelectionDidEndSearch:(KBContactsSelectionViewController *)csvc;
 
 - (void) contactsSelection:(KBContactsSelectionViewController *)selection didSelectContact:(APContact *)contact;
 - (void) contactsSelection:(KBContactsSelectionViewController *)selection didRemoveContact:(APContact *)contact;
@@ -39,6 +41,7 @@
 @property (strong, nonatomic) UIView * additionalInfoView;
 @property (readonly) NSArray * selectedContacts;
 - (void) clearSelected;
+- (void) deselect:(APContact *) contact;
 
 + (KBContactsSelectionViewController*)contactsSelectionViewControllerWithConfiguration:(void (^)(KBContactsSelectionConfiguration* configuration))configurationBlock;
 

@@ -32,6 +32,7 @@
 - (void)runSearch:(NSString*)text;
 - (void)selectAll;
 - (void)removeAll;
+- (void)remove:(APContact *) contact;
 - (NSArray*)selectedContacts;
 - (NSArray*)phonesOfSelectedContacts;
 - (NSArray*)emailsOfSelectedContacts;

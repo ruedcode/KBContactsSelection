@@ -11,7 +11,7 @@
 
 
 
-@interface KBContactsSelectionViewController () <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, KBContactsTableViewDataSourceDelegate>
+@interface KBContactsSelectionViewController () <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, KBContactsTableViewDataSourceDelegate, UISearchBarDelegate>
 
 @property (strong) NSArray * selectedContacts;
 
@@ -143,6 +143,13 @@
     _selectedContacts = @[];
 }
 
+- (void) deselect:(APContact *) contact {
+    [_kBContactsTableViewDataSource remove:contact];
+    NSMutableArray * tmp = [NSMutableArray arrayWithArray:_selectedContacts];
+    [tmp removeObject:contact];
+    _selectedContacts = tmp;
+}
+
 - (void)customizeColors
 {
     _navigationBarSearchContacts.tintColor = _configuration.tintColor;
@@ -152,6 +159,7 @@
 }
 
 #pragma mark - UISearchBarDelegate
+
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -166,6 +174,20 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    if ([_delegate respondsToSelector:@selector(contactsSelectionDidStartSearch:)]) {
+        [_delegate contactsSelectionDidStartSearch:self];
+    }
+    return true;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
+    if ([_delegate respondsToSelector:@selector(contactsSelectionDidEndSearch:)]) {
+        [_delegate contactsSelectionDidEndSearch:self];
+    }
+    return true;
 }
 
 #pragma mark - IBActions
