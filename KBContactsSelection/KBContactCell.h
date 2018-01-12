@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPhone;
 @property (weak, nonatomic) IBOutlet UILabel *labelPhoneType;
 @property (weak, nonatomic) IBOutlet KBRadioButton *buttonSelection;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UILabel *InitialsLabel;
 
 @end

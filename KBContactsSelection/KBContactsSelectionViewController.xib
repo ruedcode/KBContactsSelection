@@ -53,14 +53,14 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-Lo-cje" userLabel="CustomInfoContainer">
-                    <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Yn3-Dg-ud5"/>
                     </constraints>
                 </view>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Type contact name" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byb-Dh-My7">
-                    <rect key="frame" x="0.0" y="124" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="56"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <textInputTraits key="textInputTraits"/>
@@ -71,8 +71,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Byb-Dh-My7" firstAttribute="bottom" secondItem="Cyg-M5-sZF" secondAttribute="top" id="2cW-Qf-Vm8"/>
-                <constraint firstItem="gm1-Lo-cje" firstAttribute="top" secondItem="7im-vS-Aea" secondAttribute="bottom" id="HAh-ac-GeA"/>
+                <constraint firstItem="gm1-Lo-cje" firstAttribute="top" secondItem="Byb-Dh-My7" secondAttribute="bottom" id="EYR-3G-QKr"/>
                 <constraint firstItem="Cyg-M5-sZF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HQB-OA-THu"/>
                 <constraint firstItem="7im-vS-Aea" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KlR-YT-8ez"/>
                 <constraint firstAttribute="trailing" secondItem="Cyg-M5-sZF" secondAttribute="trailing" id="OKh-3q-fAT"/>
@@ -80,11 +79,12 @@
                 <constraint firstItem="Byb-Dh-My7" firstAttribute="trailing" secondItem="gm1-Lo-cje" secondAttribute="trailing" id="PhN-Tq-tTy"/>
                 <constraint firstItem="Cyg-M5-sZF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PiY-iy-QJg"/>
                 <constraint firstItem="Byb-Dh-My7" firstAttribute="leading" secondItem="gm1-Lo-cje" secondAttribute="leading" id="cfb-JQ-m3i"/>
+                <constraint firstItem="Cyg-M5-sZF" firstAttribute="top" secondItem="gm1-Lo-cje" secondAttribute="bottom" id="div-xy-ZDc"/>
                 <constraint firstItem="gm1-Lo-cje" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e6u-7U-u84"/>
                 <constraint firstItem="7im-vS-Aea" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eLN-VV-C4Q"/>
+                <constraint firstItem="Byb-Dh-My7" firstAttribute="top" secondItem="7im-vS-Aea" secondAttribute="bottom" id="onR-rs-wcm"/>
                 <constraint firstAttribute="bottom" secondItem="Cyg-M5-sZF" secondAttribute="bottom" id="plE-6k-sAq"/>
                 <constraint firstAttribute="trailing" secondItem="7im-vS-Aea" secondAttribute="trailing" id="qgE-y9-xH7"/>
-                <constraint firstItem="Byb-Dh-My7" firstAttribute="top" secondItem="gm1-Lo-cje" secondAttribute="bottom" id="wDU-Jw-67F"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">

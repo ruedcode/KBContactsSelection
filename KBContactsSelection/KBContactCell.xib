@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91I-4d-Ojx" customClass="KBRadioButton">
-                        <rect key="frame" x="8" y="10" width="28" height="28"/>
+                        <rect key="frame" x="564" y="10" width="28" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="7aI-iE-yhv"/>
                             <constraint firstAttribute="height" constant="28" id="mUH-73-QEO"/>
@@ -47,8 +48,32 @@
                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jec-7Y-In2">
-                        <rect key="frame" x="532" y="13" width="60" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwc-De-VJg">
+                        <rect key="frame" x="8" y="8" width="28" height="28"/>
+                        <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-cB-r8k">
+                        <rect key="frame" x="8" y="8" width="28" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="EPP-I5-2v3"/>
+                            <constraint firstAttribute="width" secondItem="WVI-cB-r8k" secondAttribute="height" multiplier="1:1" id="w21-Ao-3nf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jec-7Y-In2">
+                        <rect key="frame" x="496" y="12" width="60" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="4EN-dM-Rqc"/>
                             <constraint firstAttribute="height" constant="21" id="9CU-QH-clQ"/>
@@ -59,19 +84,27 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="x6u-Pk-kwx" firstAttribute="leading" secondItem="91I-4d-Ojx" secondAttribute="trailing" constant="8" id="420-Z2-zqK"/>
+                    <constraint firstItem="91I-4d-Ojx" firstAttribute="leading" secondItem="jec-7Y-In2" secondAttribute="trailing" constant="8" symbolic="YES" id="5zE-va-SNk"/>
                     <constraint firstItem="inz-ZK-Dbs" firstAttribute="top" secondItem="x6u-Pk-kwx" secondAttribute="bottom" constant="-3" id="9cF-nW-82j"/>
+                    <constraint firstItem="WVI-cB-r8k" firstAttribute="centerY" secondItem="Idi-m3-XIQ" secondAttribute="centerY" constant="-1" id="ATM-I7-k9G"/>
                     <constraint firstAttribute="centerY" secondItem="91I-4d-Ojx" secondAttribute="centerY" constant="-1" id="AjK-Re-tV6"/>
                     <constraint firstItem="x6u-Pk-kwx" firstAttribute="width" secondItem="inz-ZK-Dbs" secondAttribute="width" id="DP0-ep-Qhf"/>
                     <constraint firstItem="x6u-Pk-kwx" firstAttribute="top" secondItem="Idi-m3-XIQ" secondAttribute="top" constant="6" id="IHI-TW-Drz"/>
-                    <constraint firstItem="91I-4d-Ojx" firstAttribute="leading" secondItem="Idi-m3-XIQ" secondAttribute="leading" constant="8" id="QAj-Vp-p6c"/>
+                    <constraint firstItem="mwc-De-VJg" firstAttribute="height" secondItem="WVI-cB-r8k" secondAttribute="height" id="IbG-or-AJw"/>
                     <constraint firstAttribute="trailing" secondItem="x6u-Pk-kwx" secondAttribute="trailing" constant="25" id="TV1-bQ-9g9"/>
                     <constraint firstAttribute="centerY" secondItem="jec-7Y-In2" secondAttribute="centerY" constant="-0.5" id="WXg-8K-W6h"/>
-                    <constraint firstAttribute="trailing" secondItem="jec-7Y-In2" secondAttribute="trailing" constant="8" id="bpx-7d-MTq"/>
+                    <constraint firstItem="mwc-De-VJg" firstAttribute="centerY" secondItem="WVI-cB-r8k" secondAttribute="centerY" id="XoE-k8-4mh"/>
+                    <constraint firstItem="mwc-De-VJg" firstAttribute="width" secondItem="WVI-cB-r8k" secondAttribute="width" id="f0S-Dr-6zV"/>
                     <constraint firstItem="x6u-Pk-kwx" firstAttribute="leading" secondItem="inz-ZK-Dbs" secondAttribute="leading" id="gOS-7a-8GO"/>
+                    <constraint firstAttribute="trailing" secondItem="91I-4d-Ojx" secondAttribute="trailing" constant="8" id="hC9-m4-mka"/>
+                    <constraint firstItem="x6u-Pk-kwx" firstAttribute="leading" secondItem="WVI-cB-r8k" secondAttribute="trailing" constant="8" id="jmJ-M9-I0B"/>
+                    <constraint firstItem="mwc-De-VJg" firstAttribute="centerX" secondItem="WVI-cB-r8k" secondAttribute="centerX" id="mhq-gj-W1K"/>
+                    <constraint firstItem="WVI-cB-r8k" firstAttribute="leading" secondItem="Idi-m3-XIQ" secondAttribute="leading" constant="8" id="uUv-to-Zui"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="InitialsLabel" destination="mwc-De-VJg" id="FtY-ar-3SU"/>
+                <outlet property="avatarImageView" destination="WVI-cB-r8k" id="ELJ-7f-EXX"/>
                 <outlet property="buttonSelection" destination="91I-4d-Ojx" id="eeS-sc-wqq"/>
                 <outlet property="labelName" destination="x6u-Pk-kwx" id="3TJ-jT-Cht"/>
                 <outlet property="labelPhone" destination="inz-ZK-Dbs" id="IH1-xn-d7d"/>
