@@ -100,9 +100,9 @@ static NSString *cellIdentifier = @"KBContactCell";
     
     [ab loadContacts:^(NSArray *contacts, NSError *error) {
         if (contacts) {
-            NSArray *filteredContacts = [self filteredDuplicatedContacts:contacts];
-            self.unmodifiedContacts = filteredContacts;
-            self.contacts = filteredContacts;
+//            NSArray *filteredContacts = [self filteredDuplicatedContacts:contacts];
+            self.unmodifiedContacts = contacts;
+            self.contacts = contacts;
         }
         [self updateAfterModifyingContacts];
         [self.delegate dataSourceDidLoadContacts:self];
