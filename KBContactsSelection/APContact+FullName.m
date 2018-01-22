@@ -21,6 +21,9 @@
     if (self.name.lastName) {
         result = [NSString stringWithFormat:@"%@ %@", result, self.name.lastName];
     }
+    else if( self.name.middleName ) {
+        result = [NSString stringWithFormat:@"%@ %@", result, self.name.middleName];
+    }
     
     return result;
 }
